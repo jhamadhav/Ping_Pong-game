@@ -138,36 +138,59 @@ var hitX = b.left > p.left && b.right < p.right;
 
 }
 
-//mousemove eventListener controls
-window.addEventListener("mousemove",function(evt) {
+//mousemove eventListener controls
+
+canvas.addEventListener("mousemove",function(evt) {
 
   user.x = evt.x - user.width ;
    evt.preventDefault();
    
    });
-        
-//touchmove eventListener controls
-canvas.addEventListener("touchmove", function(e){
-        var rect = canvas.getBoundingClientRect();
-        var root = document.documentElement;
-        var touch = e.changedTouches[0];
-        var touchX = parseInt(touch.clientX) - rect.top - root.scrollTop ;
-        e.preventDefault();
-        user.x = touchX - user.width/2;});
-                
-                   
+        
+
+//touchmove eventListener controls
+
+canvas.addEventListener("touchmove", function(e){
+
+        var rect = canvas.getBoundingClientRect();
+
+        var root = document.documentElement;
+
+        var touch = e.changedTouches[0];
+
+        var touchX = parseInt(touch.clientX) - rect.top - root.scrollTop ;
+
+        e.preventDefault();
+
+        user.x = touchX - user.width/2;});
+
+        
+        
+
+        
+           
+
 //keyboard controls
-addEventListener("keydown",
-function(e) {
+addEventListener("keydown",
+
+function(e) {
+
   
-  //arrow left
-  if (e.keyCode == "83") {
-       user.y-=2;
-  } //arrow right
+  //arrow left
+
+  if (e.keyCode == "83") {
+
+       user.y-=2;
+
+  } //arrow right
+
   else if (e.keyCode =="85")  {    
-       user.y+=2;
-  }
-});
+       user.y+=2;
+
+  }
+
+});
+
 
 
 
